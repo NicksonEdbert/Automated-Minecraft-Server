@@ -60,7 +60,7 @@ terraform init
 # Apply the changes
 terraform apply
 
-# Wait about 5 minutes for it to create the instance and run the set-up script
+# Wait about 4 minutes for it to create the instance and run the set-up script
 
 # Then, connect to the Minecraft Server using the IP address that prints out
 # If you do not know how, please refer to the last section of this README file

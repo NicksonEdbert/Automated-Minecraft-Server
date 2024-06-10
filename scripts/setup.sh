@@ -57,6 +57,8 @@ Group=docker
 WantedBy=multi-user.target
 EOF'
 
+sleep 60
+
 # Enable and start the service
 sudo systemctl enable minecraft
 sudo systemctl start minecraft
