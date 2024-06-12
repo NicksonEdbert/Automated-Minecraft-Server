@@ -1,7 +1,6 @@
 # Automated Minecraft Server Deployment on AWS
 
 ## Background
-
 ### What Will We Do?
 - **Provision AWS infrastructure:** Using Terraform, we will create an EC2 instance, configure networking components like VPC and security groups, and ensure that all necessary AWS resources are correctly set up for running a Minecraft server.
 - **Configure and manage the Minecraft server:** Once the infrastructure is ready, Ansible will be used to install the Minecraft server, configure its settings, and ensure it's ready for players to connect.
@@ -10,8 +9,8 @@
 - **Using Terraform:** We'll write infrastructure-as-code scripts to define and deploy the cloud resources needed.
 - **Using Ansible:** We'll write playbooks to automate the configuration of the Minecraft server, making it operational immediately upon deployment.
 
-## Requirements
 
+## Requirements
 ### Prerequisites
 To successfully execute the scripts and deploy the Minecraft server, you will need:
 - AWS Account
@@ -22,12 +21,16 @@ To successfully execute the scripts and deploy the Minecraft server, you will ne
 ### Credentials and Configuration
 - **AWS Credentials:** Ensure that your AWS credentials are configured properly by running `aws configure`. This will set up your access key, secret key, and default region.
 
-<!-- ## Major Steps -->
 
-<!-- One diagram from mine and user major steps -->
+## Major Steps
+### Diagram of Your Major Steps
+![Diagram of Your Major Steps](images/diagram_of_your_major_steps.jpeg)
+
+### Diagram of My Major Steps
+![Diagram of My Major Steps](images/diagram_of_my_major_steps.jpeg)
+
 
 ## List of Commands to Run
-
 ```bash
 # Clone the repository
 git clone https://github.com/awhittle2/Minecraft-Server.git
