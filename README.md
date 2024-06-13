@@ -5,9 +5,9 @@
 - **Provision AWS infrastructure:** Using Terraform, we will create an EC2 instance, configure networking components like VPC and security groups, and ensure that all necessary AWS resources are correctly set up for running a Minecraft server.
 - **Configure and manage the Minecraft server:** Once the infrastructure is ready, Ansible will be used to install the Minecraft server, configure its settings, and ensure it's ready for players to connect.
 
-### How Will We Do it?
+### How Will We Do It?
 - **Using Terraform:** We'll write infrastructure-as-code scripts to define and deploy the cloud resources needed.
-- **Using Ansible:** We'll write playbooks to automate the configuration of the Minecraft server, making it operational immediately upon deployment.
+- **Using Docker and Docker Compose:** Docker will be utilized to containerize the Minecraft server, ensuring consistent environments and easy deployment through Docker Compose.
 
 
 ## Requirements
@@ -54,10 +54,10 @@ export AWS_ACCESS_KEY_ID=___
 export AWS_SECRET_ACCESS_KEY=___
 export AWS_SESSION_TOKEN=___
 
-# Make sure that main.tf is there
+# Make sure that main.tf is present
 ls
 
-# Initialize the terraform prjoect
+# Initialize the terraform project
 terraform init
 
 # Apply the changes
@@ -75,21 +75,21 @@ aws ec2 reboot-instances --instance-ids i-___
 
 ## How to Connect to Minecraft Server
 
-### Test The Server Using Nmap
+### Test the Server Using Nmap
 ```
 nmap -sV -Pn -p T:25565 <instance_public_ip>
 ```
 
-### Test The Server With Minecraft
-1. Open the latest stable minecraft version
+### Test the Server With Minecraft
+1. Open the latest stable version of Minecraft
 2. Click on multiplayer
 ![Minecraft Multiplayer Image](images/minecraft_multiplayer.png)
 3. Select __Add Server__
 ![Minecraft Add Server Image](images/minecraft_add_server.png)
-4. Create a name and under **Server Address**, enter the public ipv4 address of your server, then click **Done**.
+4. Create a name and under **Server Address**, enter the public IPv4 address of your server, then click **Done**.
 ![Minecraft Server Info Image](images/minecraft_server_info.png)
-6. Wait for Minecraft to connect to the server
-7. Click on your server and then click **Join Server**
+5. Wait for Minecraft to connect to the server
+6. Click on your server and then click **Join Server**
 ![Minecraft Join Server Image](images/minecraft_join_server.png)
-8. Enjoy your very own Minecraft server! Congratulations!!
+7. Enjoy your very own Minecraft server! Congratulations!!
 ![Play Minecraft Image](images/minecraft_done.png)
