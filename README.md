@@ -66,6 +66,7 @@ terraform apply
 # Wait about 4 minutes for it to create the instance and run the set-up script
 
 # Then, connect to the Minecraft Server using the IP address that prints out
+
 # If you do not know how, please refer to the last section of this README file
 
 # Lastly, to test if it auto-starts on reboot, replace the underscores with the instance ID that also gets printed out, and press enter
@@ -74,7 +75,21 @@ aws ec2 reboot-instances --instance-ids i-___
 
 ## How to Connect to Minecraft Server
 
-1. Test the server using Nmap
+### Test The Server Using Nmap
 ```
 nmap -sV -Pn -p T:25565 <instance_public_ip>
 ```
+
+### Test The Server With Minecraft
+1. Open the latest stable minecraft version
+2. Click on multiplayer
+![Minecraft Multiplayer Image](images/minecraft_multiplayer.png)
+3. Select __Add Server__
+![Minecraft Add Server Image](images/minecraft_add_server.png)
+4. Create a name and under **Server Address**, enter the public ipv4 address of your server, then click **Done**.
+![Minecraft Server Info Image](images/minecraft_server_info.png)
+6. Wait for Minecraft to connect to the server
+7. Click on your server and then click **Join Server**
+![Minecraft Join Server Image](images/minecraft_join_server.png)
+8. Enjoy your very own Minecraft server! Congratulations!!
+![Play Minecraft Image](images/minecraft_done.png)
