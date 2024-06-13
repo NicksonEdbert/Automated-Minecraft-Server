@@ -1,7 +1,7 @@
 name: "Automated Minecraft Server"
 
 on:
-    push:
+    pull_request:
 
 env:
     TF_CLOUD_ORGANIZATION: "Yin-Yang"
