@@ -3,7 +3,7 @@
 ## Background
 ### What Will We Do?
 - **Provision AWS infrastructure:** Using Terraform, we will create an EC2 instance, configure networking components like VPC and security groups, and ensure that all necessary AWS resources are correctly set up for running a Minecraft server.
-- **Configure and manage the Minecraft server:** Once the infrastructure is ready, Ansible will be used to install the Minecraft server, configure its settings, and ensure it's ready for players to connect.
+- **Configure and manage the Minecraft server:** Once the infrastructure is ready, Docker Compose will be used to install the Minecraft server, configure its settings, and ensure it's ready for players to connect.
 
 ### How Will We Do It?
 - **Using Terraform:** We'll write infrastructure-as-code scripts to define and deploy the cloud resources needed.
@@ -15,7 +15,6 @@
 To successfully execute the scripts and deploy the Minecraft server, you will need:
 - AWS Account
 - Terraform installed on your machine ([Download Terraform](https://www.terraform.io/downloads.html))
-- Ansible installed on your machine ([Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
 - AWS CLI installed and configured ([AWS CLI Configuration](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html))
 
 ### Credentials and Configuration
@@ -31,13 +30,6 @@ To successfully execute the scripts and deploy the Minecraft server, you will ne
 
 
 ## List of Commands to Run
-```bash
-# Clone the repository
-git clone https://github.com/awhittle2/Minecraft-Server.git
-cd Minecraft-Server/
-
-# Enter your AWS account details
-```
 What you'll need:
 - Your AWS Access Key ID
 - Your AWS Secret Access Key
@@ -49,27 +41,27 @@ Where to go to find it:
 3. Click `AWS CLI: Show`
 
 ```bash
-# Replace the underscores with your AWS credentials
+# Fill in your AWS credentials in the placeholders
 export AWS_ACCESS_KEY_ID=___
 export AWS_SECRET_ACCESS_KEY=___
 export AWS_SESSION_TOKEN=___
 
-# Make sure that main.tf is present
+# Check that the main.tf file exists in the directory
 ls
 
-# Initialize the terraform project
+# Begin initialization of the Terraform project
 terraform init
 
-# Apply the changes
+# Execute the Terraform plan to build the infrastructure
 terraform apply
 
-# Wait about 4 minutes for it to create the instance and run the set-up script
+# Allow approximately 4 minutes for the EC2 instance to be created and configured
 
-# Then, connect to the Minecraft Server using the IP address that prints out
+# Connect to your newly set-up Minecraft Server using the displayed IP address
 
-# If you do not know how, please refer to the last section of this README file
+# Refer to the final section of this README for connection instructions if needed
 
-# Lastly, to test if it auto-starts on reboot, replace the underscores with the instance ID that also gets printed out, and press enter
+# To verify that the server restarts automatically, input the printed instance ID below and reboot the instance
 aws ec2 reboot-instances --instance-ids i-___
 ```
 
